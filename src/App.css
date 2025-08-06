@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+}
