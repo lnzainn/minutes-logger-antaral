@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/minutes-logger-antaral/static/css/main.44d35fd0.css",
-    "main.js": "/minutes-logger-antaral/static/js/main.2febf0ba.js",
+    "main.js": "/minutes-logger-antaral/static/js/main.58a3117b.js",
     "static/js/453.d2b97de3.chunk.js": "/minutes-logger-antaral/static/js/453.d2b97de3.chunk.js",
     "index.html": "/minutes-logger-antaral/index.html",
     "main.44d35fd0.css.map": "/minutes-logger-antaral/static/css/main.44d35fd0.css.map",
-    "main.2febf0ba.js.map": "/minutes-logger-antaral/static/js/main.2febf0ba.js.map",
+    "main.58a3117b.js.map": "/minutes-logger-antaral/static/js/main.58a3117b.js.map",
     "453.d2b97de3.chunk.js.map": "/minutes-logger-antaral/static/js/453.d2b97de3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44d35fd0.css",
-    "static/js/main.2febf0ba.js"
+    "static/js/main.58a3117b.js"
   ]
 }
