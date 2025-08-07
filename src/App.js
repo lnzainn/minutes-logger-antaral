@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-// START DATA — all names as strings
+// START DATA: all names as strings
 const initialData = {
-  Creatives: [],
-  Technicals: [],
-  "Corporate Relations": ['Aarya'],
-  Documentation: ['Mohit', 'Samridhi', 'Zain'],
+  Creatives: ['Aarav', 'Aditya Keshri', 'Aditya KS', 'Aman', 'Deeya', 'Divya', 'Hansika', 'Kripa', 'Kishore', 'Arushi', 'Naitik', 'Niranjan', 'Pragya', 'Prarthana', 'Subhalakshmi', 'Tanmay', 'Yash', 'Yathi', 'Sanjai', 'Madhur', 'Supreet'],
+  Technicals: ['Aditya Kumar', 'Aniket', 'Ashwin', 'Daniel', 'Diya', 'Manasvi', 'Meghana', 'Sameer', 'Sharanya', 'Sree Vardhan'],
+  "Corporate Relations": ['K.V Sri Vatsa', 'Aarya', 'Thushaar', 'Kirthi', 'Archi', 'Chuli', 'Srish', 'Kamakshi', 'John'],
+  Documentation: ['Mohith', 'Samridhi', 'Zain', 'Vinay', 'Swastika', 'Theeksha', 'Nithi'],
   Secretary: ['Aniket', 'Deepan', 'Ekta', 'Narayan', 'Nutan', 'Sukanya'],
 };
-// Unique color per department (besides Secretary)
+
 const departmentColors = {
   Creatives: "#FFCD3C",
   Technicals: "#8ACB88",
@@ -26,14 +26,15 @@ const sectionBoxStyle = {
   minWidth: 220,
   maxWidth: 340,
   minHeight: 180,
-  height: 380,
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "flex-start",
   marginBottom: 20,
+  // Removed height and overflow to allow the box to grow!
 };
+
 const namesRowStyle = {
   display: "flex",
   flexWrap: "wrap",
@@ -42,6 +43,14 @@ const namesRowStyle = {
   width: "100%",
   marginTop: 8,
 };
+
+const departmentDisplayOrder = [
+  "Secretary",    // always on top
+  "Creatives",
+  "Technicals",
+  "Corporate Relations",
+  "Documentation"
+];
 
 function App() {
   // Section state: always alphabetically sorted
@@ -58,6 +67,7 @@ function App() {
   const [endTime, setEndTime] = useState();
 
   const isSecretary = name => initialData.Secretary.includes(name);
+
   const getDepartmentForName = name =>
     Object.keys(initialData).find(
       dept => dept !== "Secretary" && initialData[dept].includes(name)
@@ -99,7 +109,7 @@ function App() {
     setEndTime();
   };
 
-  // Attendance calculations (exclude secretaries unless they're in a department too)
+  // Attendance calculations
   const departmentAttendance = Object.keys(departmentColors).map(dept => {
     const total = initialData[dept].length;
     const present = initialData[dept].filter(name => presentToday.includes(name)).length;
@@ -110,14 +120,31 @@ function App() {
   const overallPresent = departmentAttendance.reduce((sum, d) => sum + d.present, 0);
   const overallPercent = overallTotal === 0 ? 0 : Math.round((overallPresent / overallTotal) * 100);
 
-  // Compose Minutes Message
-  const secretariesPresent = presentToday
+  // Organize Members Present By Department for Minutes Message
+  const membersByDept = {};
+
+  // Secretaries present (sorted)
+  membersByDept.Secretary = presentToday
     .filter(n => isSecretary(n))
     .sort((a, b) => a.localeCompare(b));
-  const othersPresent = presentToday
-    .filter(n => !isSecretary(n))
-    .sort((a, b) => a.localeCompare(b));
-  const membersPresentString = [...secretariesPresent, ...othersPresent].join(", ");
+
+  // Each department
+  Object.keys(departmentColors).forEach(dept => {
+    membersByDept[dept] = presentToday
+      .filter(name => getDepartmentForName(name) === dept && !isSecretary(name))
+      .sort((a, b) => a.localeCompare(b));
+  });
+
+  // Build department-wise member section for minutes (skip empty depts)
+  const membersPresentBlock =
+    departmentDisplayOrder
+      .map(dept =>
+        membersByDept[dept] && membersByDept[dept].length > 0
+          ? `${dept}: ${membersByDept[dept].join(", ")}`
+          : null
+      )
+      .filter(Boolean)
+      .join("\n");
 
   const minutesText = `
 Minutes of the Meeting
@@ -130,7 +157,7 @@ Date: ${new Date(date).toLocaleDateString(undefined, {
 Time: ${startTime} to ${endTime}
 
 Members Present:
-${membersPresentString}
+${membersPresentBlock}
 
 Teacher Coordinators: Unofficial Meeting
 
@@ -147,7 +174,6 @@ Discussions took place-
     );
   };
 
-  // ------- RENDER
   return (
     <div
       style={{
@@ -173,7 +199,6 @@ Discussions took place-
       >
         {Object.entries(sections).map(([section, names]) => (
           <div key={section} style={{ ...sectionBoxStyle, width: "100%", maxWidth: 340 }}>
-            {/* ALL section headers centered */}
             <h2
               style={{
                 borderBottom: "1px solid #FFD700",
@@ -184,7 +209,6 @@ Discussions took place-
             >
               {section}
             </h2>
-            {/* Names in row, wrapped, centered */}
             <div style={namesRowStyle}>
               {names.map(name => (
                 <div
@@ -242,7 +266,6 @@ Discussions took place-
             overflowY: "auto",
           }}
         >
-
           {presentToday.map(name => {
             const isSec = isSecretary(name);
             const dept = getDepartmentForName(name);
@@ -459,7 +482,6 @@ Discussions took place-
 
       {/* --- Responsive styles --- */}
       <style>
-        
         {`
         @media (max-width: 800px) {
           .section-box { min-width: 90vw !important; max-width: 98vw !important; height: auto !important;}
