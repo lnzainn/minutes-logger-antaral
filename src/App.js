@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 // START DATA: all names as strings
 const initialData = {
-  Creatives: ['Aarav', 'Aditya Keshri', 'Aditya KS', 'Aman', 'Deeya', 'Divya', 'Hansika', 'Kripa', 'Kishore', 'Arushi', 'Naitik', 'Niranjan', 'Pragya', 'Prarthana', 'Subhalakshmi', 'Tanmay', 'Yash', 'Yathi', 'Sanjai', 'Madhur', 'Supreet'],
+  Creatives: ['Aarav', 'Aditya Keshri', 'Aditya KS', 'Aman', 'Deeya', 'Divya', 'Hansika', 'Kripa', 'Kishore', 'Arushi', 'Naitik', 'Niranjan', 'Pragya', 'Subhalakshmi', 'Tanmay', 'Yash', 'Yathi', 'Sanjai', 'Supreet'],
   Technicals: ['Aditya Kumar', 'Aniket', 'Ashwin', 'Daniel', 'Diya', 'Manasvi', 'Meghana', 'Sameer', 'Sharanya', 'Sree Vardhan'],
-  "Corporate Relations": ['K.V Sri Vatsa', 'Aarya', 'Thushaar', 'Kirthi', 'Archi', 'Chuli', 'Srish', 'Kamakshi', 'John'],
+  "Corporate Relations": ['K.V Sri Vatsa', 'Aarya', 'Thushaar', 'Kirthi', 'Archi', 'Chuli', 'Srish', 'John'],
   Documentation: ['Mohith', 'Samridhi', 'Zain', 'Vinay', 'Swastika', 'Theeksha', 'Nithi'],
   Secretary: ['Aniket', 'Deepan', 'Ekta', 'Narayan', 'Nutan', 'Sukanya'],
 };
