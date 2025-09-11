@@ -16,15 +16,11 @@ const membersData = [
   { name: "Aditya KS", displayName: "Aditya KS", usn: "23BMSR0166", department: "Creatives" },
   { name: "Aman", displayName: "Aman", usn: "JUUG25BCOMH35409", department: "Creatives" },
   { name: "Arushi", displayName: "Arushi", usn: "23BMSR0187", department: "Creatives" },
-  { name: "Deeya", displayName: "Deeya", usn: "24BCR00449", department: "Creatives" },
   { name: "Divya", displayName: "Divya", usn: "JUUG25BCOMH20284", department: "Creatives" },
   { name: "Hansika", displayName: "Hansika", usn: "24BCR00354", department: "Creatives" },
   { name: "Kishore", displayName: "Kishore", usn: "JUUG25BMS33797", department: "Creatives" },
   { name: "Kripa", displayName: "Kripa", usn: "23BMSR0178", department: "Creatives" },
-  { name: "Madhur", displayName: "Madhur", usn: "23BMSR0115", department: "Creatives" },
   { name: "Niranjan", displayName: "Niranjan", usn: "23BMSR0188", department: "Creatives" },
-  { name: "Prarthana", displayName: "Prarthana", usn: "24BCR00154", department: "Creatives" },
-  { name: "Sanjai", displayName: "Sanjai", usn: "JUUG25BCOMH16951", department: "Creatives" },
   { name: "Subhalakshmi", displayName: "Subhalakshmi", usn: "23BCR00789", department: "Creatives" },
   { name: "Supreet", displayName: "Supreet", usn: "JUUG25BCOMP29163", department: "Creatives" },
   { name: "Yash", displayName: "Yash", usn: "JUUG25BCOMP31005", department: "Creatives" },
@@ -45,15 +41,12 @@ const membersData = [
   { name: "Chuli", displayName: "Chuli", usn: "23BMSR0379", department: "Corporate Relations" },
   { name: "Harshini", displayName: "Harshini", usn: "JUUG25BCOM23884", department: "Corporate Relations" },
   { name: "K.V Sri Vatsa", displayName: "K.V Sri Vatsa", usn: "23BMSR0357", department: "Corporate Relations" },
-  { name: "Kamakshi", displayName: "Kamakshi", usn: "", department: "Corporate Relations" }, // Add USN if available
-  { name: "Kirthi", displayName: "Kirthi", usn: "JUUG25BCOM23884", department: "Corporate Relations" }, // Add USN if available
+  { name: "Kirthi", displayName: "Kirthi", usn: "JUUG25BCOM23884", department: "Corporate Relations" }, 
   { name: "Thushaar", displayName: "Thushaar", usn: "24BCR00835", department: "Corporate Relations" },
 
   // Documentation
-  { name: "Mohith", displayName: "Mohith", usn: "24BCR00416", department: "Documentation" },
   { name: "Nithi", displayName: "Nithi", usn: "JUUGI202510277", department: "Documentation" },
   { name: "Samridhi", displayName: "Samridhi", usn: "JUUG25BCOMH27339", department: "Documentation" },
-  { name: "Swastika", displayName: "Swastika", usn: "JUUG25BCOMH15355", department: "Documentation" },
   { name: "Theeksha", displayName: "Theeksha", usn: "JUUG25BCOMH13132", department: "Documentation" },
   { name: "Vinay", displayName: "Vinay", usn: "23BCR00284", department: "Documentation" },
   { name: "Zain", displayName: "Zain", usn: "JUUG24BMSR0133", department: "Documentation" },
