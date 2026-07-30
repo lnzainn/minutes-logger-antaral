@@ -170,7 +170,9 @@ function App() {
   const overallPercent = overallTotal === 0 ? 0 : Math.round((overallPresent / overallTotal) * 100);
 
   // Build members present by department with secretaries prioritized
-  const prioritySecretaries = ["Aarya", "Swaroop"];
+  const prioritySecretaries = [
+  "Aarya Agarwal",
+  "Swaroop Patra"];
   const membersByDept = {};
 
   membersByDept.Secretary = presentToday
@@ -200,12 +202,34 @@ function App() {
   .map((dept) => {
     if (!membersByDept[dept] || membersByDept[dept].length === 0) return null;
 
-    const displayNames = membersByDept[dept].map((name) => {
-      const member = membersData.find((m) => m.name === name);
-      return member ? member.displayName : name;
-    });
+    let members = membersByDept[dept]
+      .map((name) => membersData.find((m) => m.name === name))
+      .filter(Boolean);
 
-    return `${dept}: ${displayNames.join(", ")}`;
+    if (dept === "Secretary") {
+      const priority = ["Aarya", "Swaroop"];
+
+      members.sort((a, b) => {
+        const aPriority = priority.indexOf(a.displayName);
+        const bPriority = priority.indexOf(b.displayName);
+
+        if (aPriority !== -1 && bPriority !== -1) {
+          return aPriority - bPriority;
+        }
+        if (aPriority !== -1) return -1;
+        if (bPriority !== -1) return 1;
+
+        return a.displayName.localeCompare(b.displayName);
+      });
+    } else {
+      members.sort((a, b) =>
+        a.displayName.localeCompare(b.displayName)
+      );
+    }
+
+    return `${dept}: ${members
+      .map((m) => m.displayName)
+      .join(", ")}`;
   })
   .filter(Boolean)
   .join("\n");
