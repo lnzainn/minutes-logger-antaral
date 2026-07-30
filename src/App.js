@@ -11,7 +11,6 @@ const membersData = [
   { name: "Thushaar Nallani", displayName: "Thushaar", usn: "24BCR00835", department: "Secretary" },
 
   // Creatives
-  { name: "Aman Patel", displayName: "Aman", usn: "25BCR00038", department: "Creatives" },
   { name: "Divya", displayName: "Divya", usn: "25BCR00039", department: "Creatives" },
   { name: "Kishore MR", displayName: "Kishore", usn: "25BMSR0261", department: "Creatives" },
   { name: "Hasyya Mathre", displayName: "Hasyya", usn: "25BMSR0087", department: "Creatives" },
