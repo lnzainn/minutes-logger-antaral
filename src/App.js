@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Complete data with member name, user-friendly display name, USN and department
 const membersData = [
