@@ -3,57 +3,47 @@ import React, { useState } from "react";
 // Complete data with member name, user-friendly display name, USN and department
 const membersData = [
   // Secretary
-  { name: "Narayan", displayName: "Narayan", usn: "23BCR00260", department: "Secretary" },
-  { name: "Sukanya", displayName: "Sukanya", usn: "23BCR00791", department: "Secretary" },
-  { name: "Aniket", displayName: "Aniket", usn: "23BCR00191", department: "Secretary" },
-  { name: "Deepan", displayName: "Deepan", usn: "23BCR00448", department: "Secretary" },
-  { name: "Nutan", displayName: "Nutan", usn: "23BCR00842", department: "Secretary" },
-  { name: "Ekta", displayName: "Ekta", usn: "23BMSR0207", department: "Secretary" },
+  { name: "Swaroop Patra", displayName: "Swaroop", usn: "24BMSR0238", department: "Secretary" },
+  { name: "Aarya Agarwal", displayName: "Aarya", usn: "24BMSR0109", department: "Secretary" },
+  { name: "Bablu Kumar Shah", displayName: "Bablu", usn: "24BMSR0257", department: "Secretary" },
+  { name: "Sameer Kumble", displayName: "Sameer", usn: "24BCR00167", department: "Secretary" },
+  { name: "A Hansika Rani Patro", displayName: "A", usn: "24BCR00897", department: "Secretary" },
+  { name: "Thushaar Nallani", displayName: "Thushaar", usn: "24BCR00835", department: "Secretary" },
 
   // Creatives
-  { name: "Aarav", displayName: "Aarav", usn: "23BMSR0160", department: "Creatives" },
-  { name: "Adithya KS", displayName: "Adithya KS", usn: "23BMSR0166", department: "Creatives" },
-  { name: "Aman", displayName: "Aman", usn: "25BCR00038", department: "Creatives" },
-  { name: "Arushi", displayName: "Arushi", usn: "23BMSR0187", department: "Creatives" },
+  { name: "Aman Patel", displayName: "Aman", usn: "25BCR00038", department: "Creatives" },
   { name: "Divya", displayName: "Divya", usn: "25BCR00039", department: "Creatives" },
-  { name: "Hansika", displayName: "Hansika", usn: "24BCR00354", department: "Creatives" },
-  { name: "Aneeba", displayName: "Aneeba", usn: "23BMSR0028", department: "Creatives" },
-  { name: "Kishore", displayName: "Kishore", usn: "JUUG25BMS33797", department: "Creatives" },
-  { name: "Kripa", displayName: "Kripa", usn: "23BMSR0178", department: "Creatives" },
-  { name: "Niranjan", displayName: "Niranjan", usn: "23BMSR0188", department: "Creatives" },
-  { name: "Subhalakshmi", displayName: "Subhalakshmi", usn: "23BCR00789", department: "Creatives" },
-  { name: "Supreet", displayName: "Supreet", usn: "23BMSR0340", department: "Creatives" },
-  { name: "Yathi", displayName: "Yathi", usn: "23BMSR0202", department: "Creatives" },
-  { name: "Pranjal", displayName: "Pranjal", usn: "24BMSR0230", department: "Creatives" },
+  { name: "Kishore MR", displayName: "Kishore", usn: "25BMSR0261", department: "Creatives" },
+  { name: "Hasyya Mathre", displayName: "Hasyya", usn: "25BMSR0087", department: "Creatives" },
+  { name: "PRANJAL.C", displayName: "PRANJAL.C", usn: "24BMSR0230", department: "Creatives" },
+  { name: "Vandana Shree HN", displayName: "Vandana", usn: "25BCR00252", department: "Creatives" },
+  { name: "Apoorva KV", displayName: "Apoorva", usn: "25BCAR0569", department: "Creatives" },
+  { name: "Deep Agarwal", displayName: "Deep", usn: "24BMSR0145", department: "Creatives" },
+  { name: "Devesh Periwal", displayName: "Devesh", usn: "25BCR00333", department: "Creatives" },
+  { name: "Vedant Ladha", displayName: "Vedant", usn: "25BCR00457", department: "Creatives" },
 
   // Technicals
-  { name: "Aditya Kumar", displayName: "Aditya Kumar", usn: "25BCR00298", department: "Technicals" },
-  { name: "Daniel", displayName: "Daniel", usn: "23BMSR0100", department: "Technicals" },
-  { name: "Manasvi", displayName: "Manasvi", usn: "25BCR00636", department: "Technicals" },
-  { name: "Sharanya", displayName: "Sharanya", usn: "25BCR00047", department: "Technicals" },
-  { name: "Sree Vardhan", displayName: "Sree Vardhan", usn: "23BMSR0202", department: "Technicals" },
-  { name: "Sameer", displayName: "Sameer", usn: "24BCR00167", department: "Technicals" },
-  { name: "Swaroop", displayName: "Swaroop", usn: "24BMSR0238", department: "Technicals" },
-  { name: "Muzamil", displayName: "Muzamil", usn: "23BCR00897", department: "Technicals" },
-  { name: "Kanishk", displayName: "Kanishk", usn: "24BMSR0223", department: "Technicals" },
-  { name: "Aniket Senapati", displayName: "Aniket Senapati", usn: "JCJ25001963", department: "Technicals" },
+  { name: "Kanishk Jain", displayName: "Kanishk", usn: "24BMSR0223", department: "Technicals" },
+  { name: "Sharanya BS", displayName: "Sharanya", usn: "25BCR00047", department: "Technicals" },
+  { name: "K.Aniket Senapati", displayName: "K.Aniket", usn: "JCJ25001963", department: "Technicals" },
+  { name: "Garvit arora", displayName: "Garvit", usn: "24BCR00475", department: "Technicals" },
+  { name: "Harsheel Dhariwal", displayName: "Harsheel", usn: "25BCR00759", department: "Technicals" },
+  { name: "Chinmay S", displayName: "Chinmay", usn: "25BCR00504", department: "Technicals" },
 
   // Corporate Relations
-  { name: "Aarya", displayName: "Aarya", usn: "24BMSRO109", department: "Corporate Relations" },
-  { name: "Chuli", displayName: "Chuli", usn: "23BMSR0379", department: "Corporate Relations" },
-  { name: "Harshini", displayName: "Harshini", usn: "23BMSR0289", department: "Corporate Relations" },
-  { name: "K.V Sri Vatsa", displayName: "K.V Sri Vatsa", usn: "23BMSR0357", department: "Corporate Relations" },
-  { name: "Kirthi", displayName: "Kirthi", usn: "25BCR00809", department: "Corporate Relations" }, 
-  { name: "Thushaar", displayName: "Thushaar", usn: "24BCR00835", department: "Corporate Relations" },
+  { name: "Sriya Guntha", displayName: "Sriya", usn: "24BMSR0131", department: "Corporate Relations" },
+  { name: "Kirthi jain", displayName: "Kirthi", usn: "25BCR00809", department: "Corporate Relations" },
+  { name: "Nandini Agarwal", displayName: "Nandini", usn: "25BCR00820", department: "Corporate Relations" },
 
   // Documentation
-  { name: "Nithi", displayName: "Nithi", usn: "25BCR00736", department: "Documentation" },
-  { name: "Samridhi", displayName: "Samridhi", usn: "25BCR00046", department: "Documentation" },
-  { name: "Theeksha", displayName: "Theeksha", usn: "25BCR00248", department: "Documentation" },
-  { name: "Vinay", displayName: "Vinay", usn: "23BCR00284", department: "Documentation" },
-  { name: "Zain", displayName: "Zain", usn: "24BMSR0133", department: "Documentation" },
-  { name: "Bablu", displayName: "Bablu", usn: "24BMSR0257", department: "Documentation" },
+  { name: "Theeksha Pavan", displayName: "Theeksha", usn: "25BCR00248", department: "Documentation" },
+  { name: "Samridhi Bhardwaj", displayName: "Samridhi", usn: "25BCR00046", department: "Documentation" },
+  { name: "Nithi Loganathan", displayName: "Nithi", usn: "25BCR00736", department: "Documentation" },
   { name: "Aseel", displayName: "Aseel", usn: "25BMSR0149", department: "Documentation" },
+  { name: "Tania Ravindra", displayName: "Tania", usn: "25BCR00243", department: "Documentation" },
+  { name: "Devansh Baheti", displayName: "Devansh", usn: "24BMSR0089", department: "Documentation" },
+  { name: "Samyuktha Badri", displayName: "Samyuktha", usn: "25BCR00135", department: "Documentation" },
+  { name: "Mrinal Muthamma C S", displayName: "Mrinal", usn: "25BCR00554", department: "Documentation" },
 ];
 
 // Department colors as before ...
@@ -180,7 +170,7 @@ function App() {
   const overallPercent = overallTotal === 0 ? 0 : Math.round((overallPresent / overallTotal) * 100);
 
   // Build members present by department with secretaries prioritized
-  const prioritySecretaries = ["Narayan", "Sukanya"];
+  const prioritySecretaries = ["Aarya", "Swaroop"];
   const membersByDept = {};
 
   membersByDept.Secretary = presentToday
