@@ -7,7 +7,7 @@ const membersData = [
   { name: "Aarya Agarwal", displayName: "Aarya", usn: "24BMSR0109", department: "Secretary" },
   { name: "Bablu Kumar Shah", displayName: "Bablu", usn: "24BMSR0257", department: "Secretary" },
   { name: "Sameer Kumble", displayName: "Sameer", usn: "24BCR00167", department: "Secretary" },
-  { name: "A Hansika Rani Patro", displayName: "A", usn: "24BCR00897", department: "Secretary" },
+  { name: "A Hansika Rani Patro", displayName: "Hansika", usn: "24BCR00897", department: "Secretary" },
   { name: "Thushaar Nallani", displayName: "Thushaar", usn: "24BCR00835", department: "Secretary" },
 
   // Creatives
@@ -15,7 +15,7 @@ const membersData = [
   { name: "Divya", displayName: "Divya", usn: "25BCR00039", department: "Creatives" },
   { name: "Kishore MR", displayName: "Kishore", usn: "25BMSR0261", department: "Creatives" },
   { name: "Hasyya Mathre", displayName: "Hasyya", usn: "25BMSR0087", department: "Creatives" },
-  { name: "PRANJAL.C", displayName: "PRANJAL.C", usn: "24BMSR0230", department: "Creatives" },
+  { name: "Pranjal C", displayName: "Pranjal", usn: "24BMSR0230", department: "Creatives" },
   { name: "Vandana Shree HN", displayName: "Vandana", usn: "25BCR00252", department: "Creatives" },
   { name: "Apoorva KV", displayName: "Apoorva", usn: "25BCAR0569", department: "Creatives" },
   { name: "Deep Agarwal", displayName: "Deep", usn: "24BMSR0145", department: "Creatives" },
@@ -25,14 +25,14 @@ const membersData = [
   // Technicals
   { name: "Kanishk Jain", displayName: "Kanishk", usn: "24BMSR0223", department: "Technicals" },
   { name: "Sharanya BS", displayName: "Sharanya", usn: "25BCR00047", department: "Technicals" },
-  { name: "K.Aniket Senapati", displayName: "K.Aniket", usn: "JCJ25001963", department: "Technicals" },
-  { name: "Garvit arora", displayName: "Garvit", usn: "24BCR00475", department: "Technicals" },
+  { name: "K Aniket Senapati", displayName: "Aniket", usn: "JCJ25001963", department: "Technicals" },
+  { name: "Garvit Arora", displayName: "Garvit", usn: "24BCR00475", department: "Technicals" },
   { name: "Harsheel Dhariwal", displayName: "Harsheel", usn: "25BCR00759", department: "Technicals" },
   { name: "Chinmay S", displayName: "Chinmay", usn: "25BCR00504", department: "Technicals" },
 
   // Corporate Relations
   { name: "Sriya Guntha", displayName: "Sriya", usn: "24BMSR0131", department: "Corporate Relations" },
-  { name: "Kirthi jain", displayName: "Kirthi", usn: "25BCR00809", department: "Corporate Relations" },
+  { name: "Kirthi Jain", displayName: "Kirthi", usn: "25BCR00809", department: "Corporate Relations" },
   { name: "Nandini Agarwal", displayName: "Nandini", usn: "25BCR00820", department: "Corporate Relations" },
 
   // Documentation
@@ -197,13 +197,18 @@ function App() {
 
   // Format members for minutes message
   const membersPresentBlock = departmentDisplayOrder
-    .map((dept) =>
-      membersByDept[dept] && membersByDept[dept].length > 0
-        ? `${dept}: ${membersByDept[dept].join(", ")}`
-        : null
-    )
-    .filter(Boolean)
-    .join("\n");
+  .map((dept) => {
+    if (!membersByDept[dept] || membersByDept[dept].length === 0) return null;
+
+    const displayNames = membersByDept[dept].map((name) => {
+      const member = membersData.find((m) => m.name === name);
+      return member ? member.displayName : name;
+    });
+
+    return `${dept}: ${displayNames.join(", ")}`;
+  })
+  .filter(Boolean)
+  .join("\n");
 
   const minutesText = `
 Minutes of the Meeting
