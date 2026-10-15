@@ -4,9 +4,15 @@ const membersData = [
   // Secretary
   { name: "Swaroop Patra", displayName: "Swaroop", usn: "24BMSR0238", department: "Secretary" },
   { name: "Aarya Agarwal", displayName: "Aarya", usn: "24BMSR0109", department: "Secretary" },
+  { name: "Bablu Kumar Shah", displayName: "Bablu", usn: "24BMSR0257", department: "Secretary" },
+  { name: "Sameer Kumble", displayName: "Sameer", usn: "24BCR00167", department: "Secretary" },
+  { name: "A Hansika Rani Patro", displayName: "Hansika", usn: "24BCR00354", department: "Secretary" },
+  {name: "Thushaar Nallani", displayName: "Thushaar", usn: "24BCR00835", department: "Secretary" },
+
+
 
   // Documentation
-  { name: "Bablu Kumar Shah", displayName: "Bablu", usn: "24BMSR0257", department: "Documentation" },
+  
   { name: "Devansh Baheti", displayName: "Devansh", usn: "24BMSR0089", department: "Documentation" },
   { name: "Himanshu Verma", displayName: "Himanshu", usn: "24BMSR0094", department: "Documentation" },
   { name: "Theeksha Pavan", displayName: "Theeksha", usn: "25BCR00248", department: "Documentation" },
@@ -21,7 +27,7 @@ const membersData = [
   { name: "Samridhi Bhardwaj", displayName: "Samridhi", usn: "25BCR00046", department: "Documentation" },
 
   // Technicals
-  { name: "Sameer Kumble", displayName: "Sameer", usn: "24BCR00167", department: "Technicals" },
+
   { name: "Kanishk Jain", displayName: "Kanishk", usn: "24BMSR0223", department: "Technicals" },
   { name: "Garvit Arora", displayName: "Garvit", usn: "24BCR00475", department: "Technicals" },
   { name: "Harsheel Dhariwal", displayName: "Harsheel", usn: "25BCR00759", department: "Technicals" },
@@ -42,7 +48,7 @@ const membersData = [
   { name: "Aryan Beck", displayName: "Aryan", usn: "24BMSR0050", department: "Technicals" },
 
   // Creatives
-  { name: "A Hansika Rani Patro", displayName: "Hansika", usn: "24BCR00354", department: "Creatives" },
+  
   { name: "Deep Agarwal", displayName: "Deep", usn: "24BMSR0145", department: "Creatives" },
   { name: "Pranjal C", displayName: "Pranjal", usn: "24BMSR0230", department: "Creatives" },
   { name: "Himanshi Chhajer", displayName: "Himanshi", usn: "25BMSR0010", department: "Creatives" },
@@ -60,7 +66,6 @@ const membersData = [
   { name: "Divya", displayName: "Divya", usn: "25BCR00039", department: "Creatives" },
 
   // Corporate Relations
-  { name: "Thushaar Nallani", displayName: "Thushaar", usn: "24BCR00835", department: "Corporate Relations" },
   { name: "Devesh Periwal", displayName: "Devesh", usn: "25BCR00333", department: "Corporate Relations" },
   { name: "Sriya Guntha", displayName: "Sriya", usn: "24BMSR0131", department: "Corporate Relations" },
   { name: "Kirthi Jain", displayName: "Kirthi", usn: "25BCR00809", department: "Corporate Relations" },
